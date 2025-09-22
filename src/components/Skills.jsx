@@ -4,7 +4,7 @@ export default function Skills() {
     'Frameworks': ['Spring Boot', 'Laravel', 'Node.js', 'React', 'Vue.js', 'Flutter'],
     'Tests': ['Selenium', 'JUnit', 'Postman', 'PHPUnit'],
     'Méthodologies': ['Agile (Scrum, XP)', 'Cycle en V', 'CI/CD'],
-    'Bases de données': ['MySQL', 'PostgreSQL', 'MongoDB', 'SQL Server'],
+    'Bases de données': ['MySQL', 'PostgreSQL', 'MongoDB', 'SQL Server', 'OracleDB'],
     'Outils': ['Git', 'Docker', 'GitHub Actions', 'Jira', 'Trello', 'Confluence', 'VS Code']
   }
 

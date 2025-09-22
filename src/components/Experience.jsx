@@ -6,7 +6,7 @@ export default function Experience() {
         <article className="card p-6">
           <div className="flex items-center justify-between gap-4">
             <h3 className="text-xl font-semibold">Stage — Développeur PHP / WordPress & SEO</h3>
-            <span className="text-sm text-slate-400">Avr 2025 – Juin 2025 • Seriff (Casablanca, Remote)</span>
+            <span className="text-sm text-slate-400">Avr 2025 – Juin 2025 • Seriff (Casablanca)</span>
           </div>
           <ul className="mt-3 list-disc list-inside text-slate-300 space-y-1">
             <li>Fonctionnalités personnalisées en PHP (shortcodes, widgets, hooks/filtres).</li>

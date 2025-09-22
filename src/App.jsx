@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Stars } from '@react-three/drei'
 import { gsap } from 'gsap'
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
 import Hero from './components/Hero.jsx'
 import Experience from './components/Experience.jsx'
 import Projects from './components/Projects.jsx'
@@ -47,15 +48,30 @@ export default function App() {
         <section id="contact" className="section">
           <div className="card p-6 md:p-10">
             <h2 className="section-title mb-6">Contact</h2>
-            <div className="grid md:grid-cols-2 gap-6 text-slate-300">
+            <div className="grid gap-6 md:grid-cols-2 text-slate-300">
               <div>
-                <p className="mb-2"><strong>Email:</strong> <a className="text-brand-orange" href="mailto:benaaliouahicham@gmail.com">benaaliouahicham@gmail.com</a></p>
-                <p className="mb-2"><strong>Téléphone:</strong> <a className="text-brand-orange" href="tel:+212674848832">+212 6 74 84 88 32</a></p>
-                <p className="mb-2"><strong>Ville:</strong> Agadir, Maroc</p>
+                <p className="mb-3 flex items-center gap-2">
+                  <FaEnvelope className="text-brand-orange"/> 
+                  <a href="mailto:benaaliouahicham@gmail.com">benaaliouahicham@gmail.com</a>
+                </p>
+                <p className="mb-3 flex items-center gap-2">
+                  <FaPhone className="text-brand-orange"/>
+                  <a href="tel:+212674848832">+212 6 74 84 88 32</a>
+                </p>
               </div>
               <div>
-                <p className="mb-2"><strong>LinkedIn:</strong> <a className="text-brand-orange" href="https://www.linkedin.com/in/hicham-benaalioua" target="_blank" rel="noreferrer">/in/hicham-benaalioua</a></p>
-                <p className="mb-2"><strong>GitHub:</strong> <a className="text-brand-orange" href="https://github.com/HichamBenaalioua" target="_blank" rel="noreferrer">/HichamBenaalioua</a></p>
+                <p className="mb-3 flex items-center gap-2">
+                  <FaLinkedin className="text-brand-orange"/>
+                  <a href="https://www.linkedin.com/in/hicham-benaalioua" target="_blank" rel="noreferrer">
+                    /in/hicham-benaalioua
+                  </a>
+                </p>
+                <p className="mb-3 flex items-center gap-2">
+                  <FaGithub className="text-brand-orange"/>
+                  <a href="https://github.com/HichamBenaalioua" target="_blank" rel="noreferrer">
+                    /HichamBenaalioua
+                  </a>
+                </p>
               </div>
             </div>
           </div>

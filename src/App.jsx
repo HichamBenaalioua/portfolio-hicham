@@ -1,8 +1,8 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Stars } from '@react-three/drei'
 import { gsap } from 'gsap'
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaBars, FaTimes } from "react-icons/fa";
 import Hero from './components/Hero.jsx'
 import Experience from './components/Experience.jsx'
 import Projects from './components/Projects.jsx'
@@ -10,6 +10,8 @@ import Skills from './components/Skills.jsx'
 
 export default function App() {
   const appRef = useRef(null)
+  const [mobileOpen, setMobileOpen] = useState(false)
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from('.stagger-in', { opacity: 0, y: 24, duration: 0.8, stagger: 0.08, ease: 'power3.out' })
@@ -27,18 +29,48 @@ export default function App() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_40%_at_50%_0%,rgba(251,150,31,0.12),transparent)]" />
       </div>
 
+      {/* Header */}
       <header className="section py-6 flex items-center justify-between">
         <a href="#" className="stagger-in flex items-center gap-3">
           <img src="/favicon.svg" alt="HB" className="w-8 h-8"/>
           <span className="font-semibold">Hicham Benaalioua</span>
         </a>
-        <nav className="stagger-in flex items-center gap-4 text-sm">
+
+        {/* Desktop Nav */}
+        <nav className="stagger-in hidden md:flex items-center gap-4 text-sm">
           <a href="#experience" className="hover:text-brand-orange">Expérience</a>
           <a href="#projects" className="hover:text-brand-orange">Projets</a>
           <a href="#skills" className="hover:text-brand-orange">Compétences</a>
           <a href="#contact" className="hover:text-brand-orange">Contact</a>
         </nav>
+
+        {/* Mobile button */}
+        <button className="md:hidden text-xl" onClick={() => setMobileOpen(true)}>
+          <FaBars />
+        </button>
       </header>
+
+      {/* Sidebar for mobile */}
+      {mobileOpen && (
+        <div className="fixed inset-0 bg-black/60 z-50 flex">
+          <div className="w-64 bg-slate-900 text-slate-100 p-6 flex flex-col gap-6">
+            <div className="flex items-center justify-between">
+              <span className="font-semibold">Menu</span>
+              <button onClick={() => setMobileOpen(false)}>
+                <FaTimes />
+              </button>
+            </div>
+            <nav className="flex flex-col gap-4 text-sm">
+              <a href="#experience" onClick={() => setMobileOpen(false)} className="hover:text-brand-orange">Expérience</a>
+              <a href="#projects" onClick={() => setMobileOpen(false)} className="hover:text-brand-orange">Projets</a>
+              <a href="#skills" onClick={() => setMobileOpen(false)} className="hover:text-brand-orange">Compétences</a>
+              <a href="#contact" onClick={() => setMobileOpen(false)} className="hover:text-brand-orange">Contact</a>
+            </nav>
+          </div>
+          {/* Close sidebar when clicking outside */}
+          <div className="flex-1" onClick={() => setMobileOpen(false)}></div>
+        </div>
+      )}
 
       <main className="space-y-24 md:space-y-36 pb-24">
         <Hero />
